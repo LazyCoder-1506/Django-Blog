@@ -3,16 +3,20 @@
 {% block content %}
 
 <div class="container">
-  {% for each_blog in blog_list %}
-  <div class="row mx-0 card my-4 py-3">
-    <div class="col-12">
-      <h4 class="merri">{{ each_blog.title }}</h4>
-      <h5 class="text-secondary merri"><i>{{ each_blog.author }}</i> - {{ each_blog.pub_date }}</h5>
-      <p class="poppins">{{ each_blog.body }}</p>
-      <a href="#" class="btn btn-sm btn-info pull-right">Read Blog</a>
+  {% if blog_list %}
+    {% for each_blog in blog_list %}
+    <div class="row mx-0 card my-4 py-3">
+      <div class="col-12">
+        <h4 class="merri">{{ each_blog.title }}</h4>
+        <h5 class="text-secondary merri"><i>{{ each_blog.author }}</i> - {{ each_blog.pub_date }}</h5>
+        <p class="poppins">{{ each_blog.body }}</p>
+        <a href="#" class="btn btn-sm btn-info pull-right">Read Blog</a>
+      </div>
     </div>
-  </div>
-  {% endfor %}
+    {% endfor %}
+  {% else %}
+    <p>There are no blogs available</p>
+  {% endif %}
 </div>
 
 {% endblock %}
