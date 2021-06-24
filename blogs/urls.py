@@ -6,5 +6,5 @@ app_name = 'blogs'
 
 urlpatterns = [
   path('', views.index, name='index'),
-  path('read/', views.singleBlog, name='singleBlog')
+  path('read/<int:blog_id>', views.singleBlog, name='singleBlog')
 ]
