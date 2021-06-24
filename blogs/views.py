@@ -6,3 +6,6 @@ from .models import Blog
 def index(request):
   blog_list = Blog.objects.order_by('-pub_date')
   return render(request, 'blogs/index.html', {'blog_list': blog_list})
+
+def singleBlog(request):
+  return render(request, 'blogs/single_blog.html', {})
